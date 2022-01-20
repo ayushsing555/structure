@@ -1,0 +1,174 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #btn1{
+        font-size: 15px;
+         width:300px;
+         height: 80px; 
+         background-color: burlywood;
+         border-radius: 20px;
+         border: none;
+    }
+        button:hover{ 
+        cursor: pointer;
+        background-color: wheat;
+        border-radius: 50px;
+    }
+        .container{
+            margin-left: 40px;
+        }
+        #btn1{
+            width:300px;
+            height: 30px;
+
+        }
+        h3{
+            color:red;
+            text-transform:capitalize;
+        }
+        pre{
+            font-size: 15px;
+            line-height: 30px;
+            color: rgb(4, 0, 255);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+         <h3>1.traversing in binary tree(pre order)</h3>
+          <pre>
+            #include<stdio.h>
+                #include<stdlib.h>
+                struct node{
+                    int data;
+                    struct node* left;
+                    struct node* right;
+                };
+                void preorder(struct node* name)
+                {
+                    if(name!=NULL)
+                    {
+                        printf("%d\n",name->data);
+                        preorder(name->left);
+                        preorder(name->right);
+                    }
+                }
+                struct node* function(int data)
+                {
+                        struct node* n;
+                        n=(struct node*)malloc(sizeof(struct node));
+                        n->data=data;
+                        n->left=NULL;
+                        n->right=NULL;
+                    }
+                main(){
+                    struct node* p=function(123);
+                    struct node* p1=function(23);
+                    struct node* p2=function(45);
+                    struct node*p3=function(12);
+                    struct node*p4=function(23);
+                    p->left=p1;
+                    p->right=p2;
+                    p1->left=p3;
+                    p1->right=p4;
+                    preorder(p);
+                }
+          </pre>
+          <hr>
+          <h3>2.traversing in binary tree(post order)</h3>
+           <pre>
+            #include<stdio.h>
+                #include<stdlib.h>
+                struct node{
+                    int data;
+                    struct node* left;
+                    struct node* right;
+                };
+                struct node* creatbinary(int data){
+                    struct node* n=(struct node*)malloc(sizeof(struct node));
+                    n->data=data;
+                    n->left=NULL;
+                    n->right=NULL;
+                    return n;
+                }
+                void postorder(struct node* root){
+                    if(root!=NULL)
+                    {
+                        postorder(root->left);
+                        postorder(root->right);
+                        printf("%d\n",root->data);
+                    }
+                }
+                main()
+                {
+                    struct node* p=creatbinary(12);
+                    struct node* p1=creatbinary(56);
+                    struct node* p2=creatbinary(45);
+                    struct node* p3=creatbinary(34);
+                    struct node* p4=creatbinary(23);
+                    p->left=p1;
+                    p->right=p2;
+                    p2->left=p3;
+                    p2->right=p4;
+                    postorder(p);
+                }
+           </pre>
+           <hr>
+          <h3>2.traversing in binary tree(in order)</h3>
+          <pre>
+            #include<stdio.h>
+                #include<stdlib.h>
+                struct node{
+                    int data;
+                    struct node* left;
+                    struct node* right;
+                };
+                void inorder(struct node* root){
+                    if(root!=NULL)
+                    {
+                        inorder(root->left);
+                        printf("%d\n",root->data);
+                        inorder(root->right);
+                    }
+                }
+                struct node* creatbinarytree(int data)
+                {
+                    struct node* n=(struct node*)malloc(sizeof(struct node));
+                    n->data=data;
+                    n->left=NULL;
+                    n->right=NULL;
+                    return n;
+                }
+                main()
+                {
+                    struct node* p=creatbinarytree(12);
+                    struct node* p1=creatbinarytree(13);
+                    struct node* p2=creatbinarytree(14);
+                    struct node* p3=creatbinarytree(15);
+                    struct node* p4=creatbinarytree(16);
+                    p->left=p1;
+                    p->right=p2;
+                    p1->left=p3;
+                    p1->right=p4;
+                     inorder(p);
+                }
+          </pre>
+          <hr>
+          <center>
+              <button id="btn1">
+                 HOME
+              </button>
+          </center>
+    </div>
+    <script>
+        btn1.addEventListener("click",()=>{
+            location.href="index.html"
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        margin-left: 40px;
+    }
+    h3{
+        color:red;
+        text-transform:capitalize;
+    }
+    pre{
+        font-size: 15px;
+        line-height: 30px;
+        color: rgb(4, 0, 255);
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+    }
+</style>
+<body>
+    <h3>
+        1.searching in BST
+    </h3>
+    <pre>
+        #include<stdio.h>
+            #include<stdlib.h>
+            struct node{
+                int data;
+                struct node* left;
+                struct node* right;
+            };
+            struct node* creatbinarytree(int data)
+            {
+                struct node* n=(struct node*)malloc(sizeof(struct node));
+                n->data=data;
+                n->left=NULL;
+                n->right=NULL;
+                return n;
+            }
+            struct node* search(struct node* root,int key)
+            {
+                if(root==NULL)
+                 return NULL;
+                if(root->data==key)
+                 return root;
+                else if(key<root->data)
+                  return search(root->left,key);
+                else 
+                 return search(root->right,key);
+            }
+            main()
+            {
+                struct node*p=creatbinarytree(89);
+                struct node*p1=creatbinarytree(13);
+                struct node*p2=creatbinarytree(12);
+                struct node*p3=creatbinarytree(34);
+                struct node*p4=creatbinarytree(121);
+                struct node*p5=creatbinarytree(45);
+                p->left=p3;
+                p->right=p4;
+                p3->left=p1;
+                p3->right=p5;
+                p1->left=p2;
+                struct node* n=search(p,121);
+                if(n!=NULL)
+                 printf("it is exists in BST");
+                else
+                 printf("it is not exists in BST");
+            }
+    </pre>
+    <h3>
+        2.Insertion in BST
+    </h3>
+    <pre>
+
+    </pre>
+    <h3>
+        3.Deletion in BST
+    </h3>
+    <pre>
+        
+    </pre>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            margin-top:20px;
+        }
+         button{
+        font-size: 15px;
+         width:300px;
+         height: 50px; 
+         background-color: burlywood;
+         border-radius: 20px;
+         border: none;
+    }
+    button:hover{ 
+        cursor: pointer;
+        background-color: wheat;
+        border-radius: 50px;
+    }
+    </style>
+</head>
+<body>
+    <center>
+        <div>
+
+        <div class=".btn">
+             <button class="button" id="btn1">
+            LINKED LIST OPERATIONS
+        </button>
+        </div>
+        <div class="btn">
+             <button class="button"id="btn2">
+           BINART TREE OPERATION INORDER,POSTORDER,PREORDER
+        </button>
+        </div>
+        <div class="btn">
+            <button class="button"id="btn3">
+          STACK OPERATION
+       </button>
+       </div>
+       <div class="btn">
+        <button class="button"id="btn4">
+      BST OPERATIONS
+   </button>
+   </div>
+   <div class="btn">
+    <button class="button"id="btn5">
+    QUEUE OPERATIONS
+</button>
+</div>
+<div class="btn">
+    <button class="button"id="btn6">
+    SORTING
+</button>
+</div>
+        </div>
+    </center>
+    <script>
+        btn1.addEventListener("click",()=>{
+           location.href="linkedlist.html";
+        });
+        btn2.addEventListener("click",()=>{
+            location.href="representation(inorder,preorder,postorder).html";
+        });
+        btn3.addEventListener("click",()=>{
+            location.href="stack.html";
+        })
+        btn4.addEventListener("click",()=>{
+            location.href="bst.html";
+        })
+        btn5.addEventListener("click",()=>{
+            location.href="queue.html";
+        })
+        btn6.addEventListener("click",()=>{
+            location.href="sorting.html";
+        })
+    </script>
+</body>
+</html>
