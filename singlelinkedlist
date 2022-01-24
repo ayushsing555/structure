@@ -285,6 +285,7 @@
                         head=deletionatindex(head,2);
                         creatlinkedlist(head);
                     }
+                    
             </pre>
             <hr>
             <h3>
